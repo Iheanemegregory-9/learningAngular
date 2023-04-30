@@ -9,6 +9,10 @@ export class ProductListComponent {
 
   selectedProduct = '';
 
+  onBuy() {
+    window.alert('You just bought ' + this.selectedProduct + '!');
+  }
+
 
 
 }
