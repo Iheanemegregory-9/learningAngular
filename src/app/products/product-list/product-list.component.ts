@@ -11,6 +11,12 @@ export class ProductListComponent implements AfterViewInit {
 
   selectedProduct = '';
 
+  products = [
+    "Webcam",
+    "Microphone",
+    "Wireless keyboard"
+  ];
+
   onBuy(name:string) {
     window.alert(`You just bought ${this.selectedProduct}!`);
   }
