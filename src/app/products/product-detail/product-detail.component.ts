@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Product } from '../product';
 
 @Component({
   selector: 'app-product-detail',
@@ -6,6 +7,8 @@ import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChange
   styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit, OnChanges {
+
+  @Input() product : Product | undefined
 
   @Input() name = '';
   @Output() bought = new EventEmitter<string>();
@@ -28,11 +31,11 @@ export class ProductDetailComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const product = changes['name'];
+    const product = changes['product'];
 
     if (!product.isFirstChange()) {
-      const oldValue = product.previousValue;
-      const newValue = product.currentValue;
+      const oldValue = product.previousValue.name;
+      const newValue = product.currentValue.name;
       console.log(`Product changed from ${oldValue} to    ${newValue}`)
     }
 }
