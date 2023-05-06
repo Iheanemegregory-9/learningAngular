@@ -3,18 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ProductsModule } from './products/products.module';
+import { CopyrightDirective } from './copyright.directive';
+import { NumericDirective } from './numeric.directive';
+import { PermissionDirective } from './permission.directive';
+// import { SortPipe } from './products/sort.pipe';
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    ProductsModule
-  ],
+  declarations: [AppComponent, CopyrightDirective, NumericDirective, PermissionDirective],
+  imports: [BrowserModule, ProductsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {  }
+export class AppModule {}
