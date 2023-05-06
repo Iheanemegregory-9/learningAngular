@@ -19,5 +19,11 @@
 
 
 
+<h3>Offers</h3>
+<ng-template appProducHost></ng-template>
+
 <p>{{today | date: 'fullDate'}}</p>
 <p appCopyright></p>
+
+<div *appPermission="['admin', 'agent']"></div>
+
