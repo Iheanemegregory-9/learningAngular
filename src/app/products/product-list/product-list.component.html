@@ -1,20 +1,23 @@
 <h2>Product List</h2>
 <ul>
-  <li *ngFor="let product of products; let i = index; let q = even" (click)="selectedProduct = product; ">
-   {{i+1}}. {{product.name}}
+  <li *ngFor="let product of products; let q=index" (click)="selectedProduct = product; ">
+   {{q+1}}: {{product.name}}
 
   </li>
 </ul>
 
-<p>{{today | date: 'fullDate'}}</p>
 
 
 <app-product-detail
-  [product]="selectedProduct" (bought)="onBuy
-  ($event)" *ngIf="selectedProduct; else noProduct">
+[product]="selectedProduct" (bought)="onBuy
+($event)" *ngIf="selectedProduct; else noProduct">
 </app-product-detail>
 
-  <ng-template #noProduct>
-    <p>No product selected!</p>
-  </ng-template>
+<ng-template #noProduct>
+  <p>No product selected!</p>
+</ng-template>
 
+
+
+<p>{{today | date: 'fullDate'}}</p>
+<p appCopyright></p>
