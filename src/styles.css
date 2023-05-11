@@ -43,3 +43,18 @@ li {
   opacity: 0.8;
   font-weight: normal;
 }
+
+
+.copyright{
+  background-color: lightgray;
+padding: 10px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.valid{
+  border-buttom: solid green;
+}
+
+.invalid{
+  border-bottom: solid red;
+}

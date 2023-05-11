@@ -9,6 +9,7 @@ import { ProductsService } from '../products.service';
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
+  providers: [ProductsService]
 })
 export class ProductListComponent implements AfterViewInit, OnInit {
   selectedProduct: Product | undefined;
@@ -16,14 +17,14 @@ export class ProductListComponent implements AfterViewInit, OnInit {
   today = new Date();
 
   products: Product[] = [];
-  private productService: ProductsService;
+  // private productService: ProductsService;
 
   onBuy(name: string) {
     window.alert(`You just bought ${this.selectedProduct?.name}!`);
   }
 
-  constructor() {
-    this.productService = new ProductsService();
+  constructor(private productService: ProductsService) {
+
   }
 
   @ViewChild(ProductDetailComponent) productDetail:
